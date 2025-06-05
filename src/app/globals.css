@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+  letter-spacing: 3px;
+}
+
+section {
+  scroll-margin-top: 64px;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
