@@ -5,7 +5,7 @@ import { AnimatedTestimonialsDemo } from "../Testimonials";
 
 const AboutSection = () => {
 
- 
+
   return (
     <section
       id="about"
@@ -13,7 +13,7 @@ const AboutSection = () => {
     >
       {/* Background Image */}
       <Image
-        src="/images/bg image 2.jpg"
+        src="/images/bg image 3.jpg"
         alt="SOS Game Hero Background"
         fill
         className="object-cover "

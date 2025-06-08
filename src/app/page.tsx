@@ -3,6 +3,7 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import HeroSection from "@/components/sections/HeroSection";
 import RequirementsSection from "@/components/sections/RequirementsSection";
 import SubscribeSection from "@/components/sections/SubscribeSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <FeaturesSection />
       <RequirementsSection />
+      <TestimonialsSection/>
       <SubscribeSection />
     </div>
   );
