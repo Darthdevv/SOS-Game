@@ -1,47 +1,72 @@
+"use client"; // if using Next.js App Router
+
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function SubscribeSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
     <section className="bg-black text-white py-12 md:py-16">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-        <Image
-          src="/images/image (4).png"
-          alt="SOS Game Hero Background"
-          width={500}
-          height={500}
-          className="object-cover "
-          priority
-        />
-        {/* Heading and Description */}
-        <div className="text-center md:text-left md:w-1/2">
-          <div>
-            <h2 className="text-3xl md:text-3xl font-extrabold mb-4 font-bebas-neue tracking-wide uppercase">
-              want to stay in touch ?
-            </h2>
-            <h3 className="text-5xl md:text-5xl font-extrabold mb-4 font-bebas-neue tracking-wide uppercase">
-              Newsletter subscribe
-            </h3>
-            <p className="text-lg md:text-xl text-gray-400">
-              In order to start receiving our news, all you have to do is enter
-              your email address. Everything else will be taken care of by us.
-              We will send you emails containing information about game. We
-              don’t spam.
-            </p>
-          </div>
+      <div
+        className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
+        ref={ref}
+      >
+        {/* Left Image */}
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full md:w-1/2 flex justify-center md:justify-start"
+        >
+          <Image
+            src="/images/image (4).png"
+            alt="SOS Game Hero Background"
+            width={400}
+            height={400}
+            className="object-contain"
+            priority
+          />
+        </motion.div>
 
-          {/* Subscription Form */}
-          <div className="w-full flex flex-col sm:flex-row gap-4 mt-5">
+        {/* Right Content */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          className="w-full md:w-1/2"
+        >
+          <p className="text-sm text-gray-400 uppercase mb-2 font-semibold tracking-wide">
+            Want to stay in touch?
+          </p>
+          <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-6">
+            Newsletter Subscribe
+          </h2>
+          <p className="text-sm md:text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
+            In order to start receiving our news, all you have to do is enter
+            your email address. Everything else will be taken care of by us. We
+            will send you emails containing information about the game. We don’t
+            spam.
+          </p>
+
+          {/* Form */}
+          <form className="flex flex-col sm:flex-row gap-4">
             <input
               type="email"
-              placeholder="aliciliniavopir@gmail.com"
-              className="flex-grow px-4 py-3 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-yellow-500"
-              aria-label="Email address"
+              placeholder="Your email address"
+              defaultValue="aliciliniavopir@gmail.com"
+              className="bg-zinc-900 text-yellow-400 placeholder-gray-400 px-5 py-3 rounded w-full sm:w-2/3 outline-none"
             />
-            <button className="bg-yellow-500 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-600 transition duration-300 font-bebas-neue">
+            <button
+              type="submit"
+              className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold px-6 py-3 rounded hover:opacity-90 transition w-full sm:w-auto"
+            >
               Subscribe now
             </button>
-          </div>
-        </div>
+          </form>
+        </motion.div>
       </div>
     </section>
   );

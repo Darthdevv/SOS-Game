@@ -34,6 +34,7 @@ section {
   scroll-margin-top: 64px;
 }
 
-button {
+button,p {
   font-family: Arial, Helvetica, sans-serif !important;
+  letter-spacing: normal;
 }
