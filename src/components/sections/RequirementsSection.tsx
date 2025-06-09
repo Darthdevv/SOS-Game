@@ -21,7 +21,7 @@ const requirements = [
 
 export default function SystemRequirements() {
   return (
-    <section className="relative min-h-screen flex items-center justify-start bg-black text-white overflow-hidden">
+    <section id="requirements" className="relative min-h-screen flex items-center justify-start bg-black text-white overflow-hidden">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center z-0"

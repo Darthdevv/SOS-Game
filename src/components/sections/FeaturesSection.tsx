@@ -38,6 +38,7 @@ export default function FeaturesSection() {
 
   return (
     <section
+      id="features"
       className="relative min-h-screen bg-black bg-cover bg-center text-white flex items-center justify-end"
       style={{ backgroundImage: "url('/images/bg image 4.jpg')" }}
     >
@@ -73,8 +74,7 @@ export default function FeaturesSection() {
               onClick={() => setSelected(index)}
               className={clsx(
                 "border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md",
-                selected === index &&
-                  "border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md"
+                selected === index && "bg-white/10"
               )}
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
