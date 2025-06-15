@@ -44,6 +44,7 @@ export const AnimatedCarousel = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
 
   if (!isClient) {
