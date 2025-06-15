@@ -13,9 +13,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  optimization: {
-    minimize: true,
-  },
 };
 
 export default nextConfig;

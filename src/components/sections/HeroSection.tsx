@@ -29,7 +29,7 @@ export default function Home() {
   return (
     <section
       className="min-h-screen bg-cover bg-center text-white flex flex-col"
-      style={{ backgroundImage: "url('/images/bg image 1.jpg')" }}
+      style={{ backgroundImage: "url('/images/hero.jpg')" }}
       role="main"
     >
       {/* Navbar */}

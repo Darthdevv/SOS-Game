@@ -31,7 +31,7 @@ export default function SubscribeSection() {
             width={400}
             height={400}
             className="object-contain"
-            priority
+            loading="lazy"
           />
         </motion.div>
 
