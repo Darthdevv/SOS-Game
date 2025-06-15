@@ -21,16 +21,23 @@ const requirements = [
 
 export default function SystemRequirements() {
   return (
-    <section id="requirements" className="relative min-h-screen flex items-center justify-start bg-black text-white overflow-hidden">
-      {/* Background image */}
+    <section
+      id="system-requirements"
+      role="region"
+      aria-labelledby="requirements-heading"
+      className="relative min-h-screen flex items-center justify-start bg-black text-white overflow-hidden"
+    >
+      {/* Decorative background image */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: "url('/images/bg image 5.jpg')" }}
       />
-      {/* Dark overlay */}
-      <div className="absolute inset-0  z-0" />
 
-      {/* Content */}
+      {/* Dark overlay (ignored by screen readers) */}
+      <div aria-hidden="true" className="absolute inset-0 z-0 bg-black/60" />
+
+      {/* Accessible Content */}
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -41,7 +48,10 @@ export default function SystemRequirements() {
         <p className="text-sm uppercase text-gray-400 tracking-widest mb-2">
           Can my computer run this game?
         </p>
-        <h2 className="text-4xl md:text-5xl font-bold uppercase mb-12">
+        <h2
+          id="requirements-heading"
+          className="text-4xl md:text-5xl font-bold uppercase mb-12"
+        >
           System Requirements
         </h2>
 

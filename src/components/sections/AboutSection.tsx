@@ -1,11 +1,8 @@
+"use client";
 import Image from "next/image";
-import { AnimatedTestimonialsDemo } from "../Testimonials";
-
-
+import { Carousel } from "../Carousel";
 
 const AboutSection = () => {
-
-
   return (
     <section
       id="about"
@@ -16,14 +13,16 @@ const AboutSection = () => {
         src="/images/bg image 3.jpg"
         alt="SOS Game Hero Background"
         fill
-        className="object-cover "
+        className="object-cover"
         priority
       />
 
       {/* Content */}
-      <AnimatedTestimonialsDemo/>
+      <div className="relative z-20 w-full">
+        <Carousel />
+      </div>
     </section>
   );
-}
+};
 
-export default AboutSection
+export default AboutSection;

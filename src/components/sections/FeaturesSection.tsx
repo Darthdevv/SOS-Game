@@ -11,11 +11,13 @@ const features = [
   },
   {
     title: "CREATE ALLIES & ENEMIES",
-    description: "Form alliances with other players to increase your chances of survival, but be wary of betrayal. Every decision counts.",
+    description:
+      "Form alliances with other players to increase your chances of survival, but be wary of betrayal. Every decision counts.",
   },
   {
     title: "IMPRESS THE AUDIENCE",
-    description: " The game is broadcast live, so your actions are watched by an audience. Gain their favor to increase your chances of survival.",
+    description:
+      "The game is broadcast live, so your actions are watched by an audience. Gain their favor to increase your chances of survival.",
   },
 ];
 
@@ -36,16 +38,25 @@ const itemVariants = {
 export default function FeaturesSection() {
   const [selected, setSelected] = useState(0);
 
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLLIElement>,
+    index: number
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setSelected(index);
+    }
+  };
+
   return (
     <section
-      id="features"
+      id="game-features"
+      aria-labelledby="features-heading"
       className="relative min-h-screen bg-black bg-cover bg-center text-white flex items-center justify-end"
       style={{ backgroundImage: "url('/images/bg image 4.jpg')" }}
     >
-      {/* Optional dark overlay */}
       <div className="absolute inset-0 max-sm:bg-gradient-to-r max-sm:from-black/80 max-sm:via-black/50 max-sm:to-transparent z-0" />
 
-      {/* Content */}
       <motion.div
         className="relative z-10 max-w-2xl px-6 py-10 md:py-20 md:pr-12 md:pl-0"
         initial="hidden"
@@ -61,19 +72,28 @@ export default function FeaturesSection() {
         </motion.p>
 
         <motion.h2
+          id="features-heading"
           className="text-4xl md:text-5xl font-bold uppercase mb-10"
           variants={itemVariants}
         >
           Features
         </motion.h2>
 
-        <motion.ul className="space-y-6">
+        <motion.ul
+          className="space-y-6"
+          role="radiogroup"
+          aria-label="Feature selection"
+        >
           {features.map((feature, index) => (
             <motion.li
               key={index}
+              role="radio"
+              aria-checked={selected === index}
+              tabIndex={0}
               onClick={() => setSelected(index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
               className={clsx(
-                "border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md",
+                "cursor-pointer border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-yellow-400",
                 selected === index && "bg-white/10"
               )}
               variants={itemVariants}
@@ -81,20 +101,18 @@ export default function FeaturesSection() {
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex items-start gap-4">
-                {/* Dot */}
                 <div
                   className={clsx(
                     "w-3 h-3 rounded-full mt-1 border border-white transition-all",
                     selected === index && "bg-yellow-400 border-yellow-400"
                   )}
+                  aria-hidden="true"
                 />
-                {/* Text */}
                 <div>
                   <h3
                     className={clsx(
                       "font-bold uppercase text-lg mb-1 transition-colors",
-                      selected === index ? "text-yellow-400" : "text-white",
-                      "group-hover:text-yellow-300"
+                      selected === index ? "text-yellow-400" : "text-white"
                     )}
                   >
                     {feature.title}

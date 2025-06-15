@@ -1,11 +1,10 @@
-import { AnimatedTestimonials } from "./ui/AnimatedTestimonials";
+import { AnimatedCarousel } from "./ui/AnimatedCarousel";
 
-
-export function AnimatedTestimonialsDemo() {
+export function Carousel() {
   const testimonials = [
     {
       quote:
-        "Each round, you and 15 other contestants compete to escape a deadly island filled with monsters. The trick is: three people can survive. Will you run solo or form friendships with others to escape? Making the right decisions could be the difference between life and death",
+        "Each round, you and 15 other contestants compete to escape a deadly island filled with monsters. The trick is: three people can survive. Will you run solo or form friendships with others to escape? Making the right decisions could be the difference between life and death.",
       name: "What is SOS?",
       designation: "social battle royale game",
       src: "/images/image.jpg",
@@ -31,5 +30,8 @@ export function AnimatedTestimonialsDemo() {
       height: 500,
     },
   ];
-  return <AnimatedTestimonials testimonials={testimonials} />;
+
+  return <AnimatedCarousel testimonials={testimonials} autoplay />;
 }
+
+

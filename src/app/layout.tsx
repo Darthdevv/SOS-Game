@@ -1,22 +1,18 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Open_Sans, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/ui/Footer";
 
-// const ibmPlexSans = localFont({
-//   src: [
-//     { path: "../../public/fonts/IBMPlexSans-Regular.ttf", weight: "400", style: "normal" },
-//     { path: "../../public/fonts/IBMPlexSans-Medium.ttf", weight: "500", style: "normal" },
-//     { path: "../../public/fonts/IBMPlexSans-SemiBold.ttf", weight: "600", style: "normal" },
-//     { path: "../../public/fonts/IBMPlexSans-Bold.ttf", weight: "700", style: "normal" },
-//   ],
-// });
+// Load fonts with proper variable names
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
+  subsets: ["latin"],
+});
 
-const bebasNeue = localFont({
-  src: [
-    { path: "../../public/fonts/BebasNeue-Regular.ttf", weight: "400", style: "normal" },
-  ],
-  variable: "--bebas-neue",
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+  weight: "400"
 });
 
 export const metadata: Metadata = {
@@ -42,10 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${bebasNeue.className} ${bebasNeue.variable} antialiased`}
-      >
+    <html lang="en" className={`${openSans.variable} ${bebasNeue.variable}`}>
+      <body className="antialiased">
         {children}
         <Footer />
       </body>

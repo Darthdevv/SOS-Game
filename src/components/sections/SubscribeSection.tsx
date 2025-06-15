@@ -1,4 +1,4 @@
-"use client"; // if using Next.js App Router
+"use client";
 
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
@@ -9,7 +9,11 @@ export default function SubscribeSection() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="bg-black text-white py-12 md:py-16">
+    <section
+      className="bg-black text-white py-12 md:py-16"
+      role="region"
+      aria-labelledby="subscribe-heading"
+    >
       <div
         className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8"
         ref={ref}
@@ -23,7 +27,7 @@ export default function SubscribeSection() {
         >
           <Image
             src="/images/image (4).png"
-            alt="SOS Game Hero Background"
+            alt="A character from the SOS game"
             width={400}
             height={400}
             className="object-contain"
@@ -41,23 +45,34 @@ export default function SubscribeSection() {
           <p className="text-sm text-gray-400 uppercase mb-2 font-semibold tracking-wide">
             Want to stay in touch?
           </p>
-          <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-6">
+          <h2
+            id="subscribe-heading"
+            className="text-4xl md:text-5xl font-extrabold uppercase mb-6"
+          >
             Newsletter Subscribe
           </h2>
           <p className="text-sm md:text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
-            In order to start receiving our news, all you have to do is enter
-            your email address. Everything else will be taken care of by us. We
-            will send you emails containing information about the game. We don’t
-            spam.
+            To start receiving our updates, enter your email address. We’ll take
+            care of the rest. We don’t spam.
           </p>
 
           {/* Form */}
-          <form className="flex flex-col sm:flex-row gap-4">
+          <form
+            className="flex flex-col sm:flex-row gap-4"
+            aria-label="Subscribe to our newsletter"
+          >
+            <label htmlFor="email" className="sr-only">
+              Email address
+            </label>
             <input
+              id="email"
+              name="email"
               type="email"
+              required
               placeholder="Your email address"
-              defaultValue="aliciliniavopir@gmail.com"
               className="bg-zinc-900 text-yellow-400 placeholder-gray-400 px-5 py-3 rounded w-full sm:w-2/3 outline-none"
+              aria-required="true"
+              aria-label="Your email address"
             />
             <button
               type="submit"

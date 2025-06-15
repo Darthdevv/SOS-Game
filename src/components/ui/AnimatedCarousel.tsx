@@ -3,7 +3,6 @@
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
 import { useEffect, useState, useMemo } from "react";
 
 type Testimonial = {
@@ -15,7 +14,7 @@ type Testimonial = {
   height: number;
 };
 
-export const AnimatedTestimonials = ({
+export const AnimatedCarousel = ({
   testimonials,
   autoplay = false,
 }: {
@@ -37,9 +36,7 @@ export const AnimatedTestimonials = ({
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
   useEffect(() => {
     setIsClient(true);
@@ -47,7 +44,6 @@ export const AnimatedTestimonials = ({
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [autoplay]);
 
   if (!isClient) {
@@ -86,9 +82,9 @@ export const AnimatedTestimonials = ({
           </div>
           <div className="flex flex-col justify-between py-4">
             <div>
-              <h3 className="text-2xl font-bold text-black dark:text-white">
+              <h2 className="text-2xl font-bold text-black dark:text-white">
                 {testimonials[0].name}
-              </h3>
+              </h2>
               <p className="text-sm text-gray-500 dark:text-neutral-500">
                 {testimonials[0].designation}
               </p>
@@ -97,10 +93,16 @@ export const AnimatedTestimonials = ({
               </p>
             </div>
             <div className="flex gap-4 pt-12 md:pt-0">
-              <button className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
+              <button
+                aria-label="Previous Slide"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              >
                 <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400" />
               </button>
-              <button className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800">
+              <button
+                aria-label="Next Slide"
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              >
                 <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400" />
               </button>
             </div>
@@ -170,26 +172,14 @@ export const AnimatedTestimonials = ({
         <div className="flex flex-col justify-between py-4 max-sm:pt-25">
           <motion.div
             key={active}
-            initial={{
-              y: 20,
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: -20,
-              opacity: 0,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            <h3 className="text-xl font-bold text-white">
+            <h2 className="text-xl font-bold text-white">
               {testimonials[active].name}
-            </h3>
+            </h2>
             <p className="text-5xl text-white">
               {testimonials[active].designation}
             </p>
@@ -197,16 +187,8 @@ export const AnimatedTestimonials = ({
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
-                  initial={{
-                    filter: "blur(10px)",
-                    opacity: 0,
-                    y: 5,
-                  }}
-                  animate={{
-                    filter: "blur(0px)",
-                    opacity: 1,
-                    y: 0,
-                  }}
+                  initial={{ filter: "blur(10px)", opacity: 0, y: 5 }}
+                  animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                   transition={{
                     duration: 0.2,
                     ease: "easeInOut",
@@ -214,7 +196,7 @@ export const AnimatedTestimonials = ({
                   }}
                   className="inline-block"
                 >
-                  {word} 
+                  {word}{" "}
                 </motion.span>
               ))}
             </motion.p>
@@ -222,12 +204,14 @@ export const AnimatedTestimonials = ({
           <div className="flex gap-4 pt-12 md:pt-5">
             <button
               onClick={handlePrev}
+              aria-label="Previous Slide"
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
             >
               <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
             </button>
             <button
               onClick={handleNext}
+              aria-label="Next Slide"
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
             >
               <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />

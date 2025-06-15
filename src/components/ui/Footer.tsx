@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -11,13 +12,18 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const Footer = () => {
   const isMobile = useIsMobile();
+
   return (
-    <footer className="bg-black text-white  py-13">
+    <footer
+      className="bg-black text-white py-13"
+      aria-labelledby="footer-heading"
+    >
       <div className="container mx-auto px-4">
+        {/* Footer Top */}
         <div className="flex flex-wrap md:flex-row items-center justify-between gap-6">
           {/* Logo Section */}
           <div className="flex justify-center md:justify-start order-1 max-sm:order-1">
-            <Link href="/">
+            <Link href="/" aria-label="SOS Game Homepage">
               <Image
                 src="/icons/logo.png"
                 alt="SOS Game Logo"
@@ -29,7 +35,10 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex flex-wrap justify-center gap-4 text-sm md:text-base order-2 max-sm:order-3">
+          <nav
+            className="flex flex-wrap justify-center gap-4 text-sm md:text-base order-2 max-sm:order-3"
+            aria-label="Footer Navigation"
+          >
             <Link href="#main" className="hover:text-yellow-400">
               MAIN
             </Link>
@@ -47,12 +56,16 @@ const Footer = () => {
             </Link>
           </nav>
 
-          {/* Social Icons */}
-          <div className="flex justify-center md:justify-end space-x-4 order-3 max-sm:order-2">
+          {/* Social Media Icons */}
+          <div
+            className="flex justify-center md:justify-end space-x-4 order-3 max-sm:order-2"
+            aria-label="Social media links"
+          >
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook"
             >
               <IconBrandFacebook
                 className="hover:text-yellow-400"
@@ -63,6 +76,7 @@ const Footer = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Twitter"
             >
               <IconBrandTwitter
                 className="hover:text-yellow-400"
@@ -73,6 +87,7 @@ const Footer = () => {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="YouTube"
             >
               <IconBrandYoutube
                 className="hover:text-yellow-400"
@@ -83,6 +98,7 @@ const Footer = () => {
               href="https://discord.com"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Discord"
             >
               <IconBrandDiscord
                 className="hover:text-yellow-400"
@@ -95,12 +111,15 @@ const Footer = () => {
         {/* Divider */}
         <hr className="border-t border-gray-700 my-6" />
 
-        {/* Legal Section */}
+        {/* Legal Info */}
         <div className="flex max-sm:flex-col items-center justify-between text-center text-xs md:text-sm space-y-2">
           <p className="text-white/50">
             © 2018 Outpost Games, Inc. All Rights Reserved
           </p>
-          <div className="flex justify-center flex-wrap gap-2">
+          <div
+            className="flex justify-center flex-wrap gap-2"
+            aria-label="Legal links"
+          >
             <Link href="#privacy" className="hover:text-yellow-400">
               PRIVACY POLICY
             </Link>

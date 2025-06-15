@@ -34,28 +34,28 @@ export default function Home() {
     >
       {/* Navbar */}
       <nav
-        className="flex justify-between items-center px-6 py-4"
+        className="flex container mx-auto justify-between items-center px-6 py-4 font-open-sans font-bold"
         aria-label="Main Navigation"
       >
         <div className="flex items-center gap-2">
           <Image
             src="/icons/logo.png"
             alt="Game Logo"
-            width={40}
-            height={40}
+            width={55}
+            height={55}
             priority
           />
         </div>
 
         <ul
-          className="hidden md:flex gap-6 uppercase text-sm font-semibold"
+          className="hidden lg:flex gap-12 uppercase text-sm"
           role="menubar"
         >
           <li role="none">
             <a
               href="#main"
               role="menuitem"
-              className="hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+              className="hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             >
               Main
             </a>
@@ -64,25 +64,25 @@ export default function Home() {
             <a
               href="#about"
               role="menuitem"
-              className="hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+              className="hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             >
               About
             </a>
           </li>
           <li role="none">
             <a
-              href="#features"
+              href="#game-features"
               role="menuitem"
-              className="hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+              className="hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             >
               Game Features
             </a>
           </li>
           <li role="none">
             <a
-              href="#requirements"
+              href="#system-requirements"
               role="menuitem"
-              className="hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+              className="hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             >
               System Requirements
             </a>
@@ -91,7 +91,7 @@ export default function Home() {
             <a
               href="#quotes"
               role="menuitem"
-              className="hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+              className="hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             >
               Quotes
             </a>
@@ -99,10 +99,14 @@ export default function Home() {
         </ul>
 
         {/* Language Dropdown */}
-        <div className="relative text-sm" ref={langDropdownRef}>
+        <div
+          className="flex flex-row gap-4 items-center justify-center relative text-sm font-open-sans font-bold"
+          ref={langDropdownRef}
+        >
           <button
+            type="button"
             onClick={() => setLangOpen(!langOpen)}
-            className="flex items-center gap-1 hover:text-yellow-400 focus:outline focus:outline-yellow-400"
+            className="flex items-center gap-1 hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
             aria-haspopup="listbox"
             aria-expanded={langOpen}
             aria-label="Select language"
@@ -111,7 +115,7 @@ export default function Home() {
           </button>
           {langOpen && (
             <ul
-              className="absolute top-full right-0 mt-2 bg-black text-white border rounded shadow-md z-50"
+              className="absolute top-full right-28 mt-2 w-[3.375rem]  bg-black text-white shadow-md z-50"
               role="listbox"
             >
               {languages
@@ -123,7 +127,7 @@ export default function Home() {
                         setCurrentLang(lang);
                         setLangOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-2 hover:bg-yellow-600 focus:outline focus:outline-yellow-600"
+                      className="block items-start justify-start w-full mr-auto text-left px-2 py-0.5 hover:text-[#FFB548] focus:outline focus:outline-[#FFB548]"
                     >
                       {lang}
                     </button>
@@ -131,19 +135,40 @@ export default function Home() {
                 ))}
             </ul>
           )}
+          {/* Divider */}
+          <div className="h-7 w-px bg-white/30"></div>
+
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/xbox icon.png"
+              alt="Xbox icon"
+              width={30}
+              height={30}
+              priority
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/icons/steam icon.png"
+              alt="Steam icon"
+              width={30}
+              height={30}
+              priority
+            />
+          </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <header className="flex-1 flex flex-col justify-center items-center text-center px-4 py-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase">
+      <header className="flex-1 flex flex-col justify-center items-center text-center px-4 py-10 -mt-24">
+        <h1 className="text-4xl md:text-8xl font-bold mb-4 uppercase font-bebas-neue">
           Survive at all costs
         </h1>
-        <p className="text-sm md:text-base mb-6 tracking-widest">
+        <p className="text-2xl max-sm:text-base mb-6 font-bebas-neue font-normal ">
           Experience New Social Battle Royale Game
         </p>
         <button
-          className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline focus:outline-black"
+          className="bg-[#FFB548] hover:bg-[#ffb648cc] text-black font-bold py-2 max-sm:text-xs px-4 rounded focus:outline focus:outline-black font-open-sans"
           aria-label="Buy now on Steam for 14.99 dollars"
         >
           Buy now on Steam &nbsp;|&nbsp; $14.99
@@ -152,10 +177,10 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className="flex flex-col gap-1 items-center justify-center text-center text-md pb-4 uppercase tracking-wider"
+        className="flex flex-col gap-1 items-center justify-center text-center text-md pb-4 uppercase tracking-wider font-open-sans font-bold"
         aria-label="Scroll indicator"
       >
-        <span className="text-white/70">The Story</span>
+        <span className="text-xs">The Story</span>
         <motion.span
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
