@@ -65,7 +65,7 @@ export default function FeaturesSection() {
         variants={containerVariants}
       >
         <motion.p
-          className="text-sm uppercase text-gray-400 tracking-widest mb-2"
+          className="text-2xl text-white font-bebas-neue font-normal tracking-[2px]"
           variants={itemVariants}
         >
           What’s so special?
@@ -73,7 +73,7 @@ export default function FeaturesSection() {
 
         <motion.h2
           id="features-heading"
-          className="text-4xl md:text-5xl font-bold uppercase mb-10"
+          className="text-[5rem] text-white font-bebas-neue font-normal leading-none mt-2 tracking-[3px] mb-12.5"
           variants={itemVariants}
         >
           Features
@@ -103,7 +103,7 @@ export default function FeaturesSection() {
               <div className="flex items-start gap-4">
                 <div
                   className={clsx(
-                    "w-3 h-3 rounded-full mt-1 border border-white transition-all",
+                    "w-3 h-3 rounded-full mt-1 border border-white transition-all shrink-0",
                     selected === index && "bg-yellow-400 border-yellow-400"
                   )}
                   aria-hidden="true"
@@ -111,14 +111,14 @@ export default function FeaturesSection() {
                 <div>
                   <h3
                     className={clsx(
-                      "font-bold uppercase text-lg mb-1 transition-colors",
+                      "uppercase mb-1 transition-colors font-bebas-neue font-normal text-4xl tracking-[2px",
                       selected === index ? "text-yellow-400" : "text-white"
                     )}
                   >
                     {feature.title}
                   </h3>
                   {selected === index && feature.description && (
-                    <p className="text-gray-300 text-sm transition-opacity">
+                    <p className="text-gray-300 text-lg transition-opacity font-open-sans font-normal">
                       {feature.description}
                     </p>
                   )}

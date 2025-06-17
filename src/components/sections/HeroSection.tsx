@@ -34,7 +34,7 @@ export default function Home() {
     >
       {/* Navbar */}
       <nav
-        className="flex container mx-auto justify-between items-center px-6 py-4 font-open-sans font-bold"
+        className="relative z-20 flex container mx-auto justify-between items-center px-6 py-4 font-open-sans font-bold"
         aria-label="Main Navigation"
       >
         <div className="flex items-center gap-2">
@@ -160,7 +160,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <header className="flex-1 flex flex-col justify-center items-center text-center px-4 py-10 -mt-24">
+      <header className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-4 py-10 -mt-24">
         <h1 className="text-4xl md:text-8xl font-bold mb-4 uppercase font-bebas-neue">
           Survive at all costs
         </h1>

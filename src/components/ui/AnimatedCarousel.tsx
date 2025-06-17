@@ -81,15 +81,15 @@ export const AnimatedCarousel = ({
               ))}
             </div>
           </div>
-          <div className="flex flex-col justify-between py-4">
+          <div className=" flex flex-col justify-between py-4">
             <div>
-              <h2 className="text-2xl font-bold text-black dark:text-white">
+              <h2 className="text-2xl  text-white font-bebas-neue font-normal tracking-[2px]">
                 {testimonials[0].name}
               </h2>
-              <p className="text-sm text-gray-500 dark:text-neutral-500">
+              <p className=" text-[5rem] text-white font-bebas-neue font-normal leading-none tracking-normal mt-2">
                 {testimonials[0].designation}
               </p>
-              <p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
+              <p className="mt-12.5 text-lg text-white font-open-sans font-normal text-[18px] tracking-normal">
                 {testimonials[0].quote}
               </p>
             </div>
@@ -178,13 +178,13 @@ export const AnimatedCarousel = ({
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
           >
-            <h2 className="text-xl font-bold text-white">
+            <h2 className=" text-2xl  text-white font-bebas-neue font-normal tracking-[2px]">
               {testimonials[active].name}
             </h2>
-            <p className="text-5xl text-white">
+            <p className=" text-[5rem] text-white font-bebas-neue font-normal leading-none mt-2 tracking-normal">
               {testimonials[active].designation}
             </p>
-            <motion.p className="mt-8 text-lg text-white">
+            <motion.p className="mt-12.5 text-lg text-white font-open-sans font-normal text-[18px] tracking-normal">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -195,9 +195,9 @@ export const AnimatedCarousel = ({
                     ease: "easeInOut",
                     delay: 0.02 * index,
                   }}
-                  className="inline-block"
+                  className="inline"
                 >
-                  {word}{" "}
+                  {word + " "}
                 </motion.span>
               ))}
             </motion.p>

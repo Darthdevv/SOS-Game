@@ -24,7 +24,7 @@ export function Carousel() {
       quote:
         "The game is set on a mysterious island filled with dangers and secrets. Explore the island, gather resources, and uncover its mysteries while trying to survive against other players.",
       name: "Explore the Island",
-      designation: "adventure and exploration",
+      designation: "mysterious environment",
       src: "/images/image (2).jpg",
       width: 500,
       height: 500,
