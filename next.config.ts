@@ -20,7 +20,6 @@ const nextConfig: NextConfig = {
     ],
   },
   compress: true,
-  swcMinify: true,
 };
 
 export default withBundleAnalyzerConfigured(nextConfig);
