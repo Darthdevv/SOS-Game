@@ -42,23 +42,25 @@ export default function SubscribeSection() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           className="w-full md:w-1/2"
         >
-          <p className="text-sm text-gray-400 uppercase mb-2 font-semibold tracking-wide">
+          <p className="text-2xl text-white font-bebas-neue font-normal tracking-[2px] mb-2">
             Want to stay in touch?
           </p>
           <h2
             id="subscribe-heading"
-            className="text-4xl md:text-5xl font-extrabold uppercase mb-6"
+            className="text-[5rem] text-white font-bebas-neue font-normal leading-none tracking-[3px] mb-12.5"
           >
             Newsletter Subscribe
           </h2>
-          <p className="text-sm md:text-base text-gray-300 mb-8 max-w-lg leading-relaxed">
-            To start receiving our updates, enter your email address. We’ll take
-            care of the rest. We don’t spam.
+          <p className="mb-12.5 text-lg text-white font-open-sans font-normal text-[18px] tracking-normal">
+            In order to start receiving our news, all you have to do is enter
+            your email address. Everything else will be taken care of by us. We
+            will send you emails containing information about game. We don’t
+            spam.
           </p>
 
           {/* Form */}
           <form
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-3"
             aria-label="Subscribe to our newsletter"
           >
             <label htmlFor="email" className="sr-only">
@@ -70,13 +72,13 @@ export default function SubscribeSection() {
               type="email"
               required
               placeholder="Your email address"
-              className="bg-zinc-900 text-yellow-400 placeholder-gray-400 px-5 py-3 rounded w-full sm:w-2/3 outline-none"
+              className="bg-zinc-900 text-[#FFB548] placeholder-gray-400 px-5 py-3 rounded w-full sm:w-2/3 outline-none"
               aria-required="true"
               aria-label="Your email address"
             />
             <button
               type="submit"
-              className="bg-gradient-to-r from-yellow-400 to-orange-400 text-black font-semibold px-6 py-3 rounded hover:opacity-90 transition w-full sm:w-auto"
+              className="bg-[#FFB548] text-black font-open-sans font-bold px-6 py-4 rounded hover:opacity-90 transition w-full sm:w-auto"
             >
               Subscribe now
             </button>

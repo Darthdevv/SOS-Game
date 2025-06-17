@@ -93,7 +93,7 @@ export default function FeaturesSection() {
               onClick={() => setSelected(index)}
               onKeyDown={(e) => handleKeyDown(e, index)}
               className={clsx(
-                "cursor-pointer border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-yellow-400",
+                "cursor-pointer border border-white/20 p-4 rounded-lg bg-black/40 backdrop-blur-md focus:outline-none focus:ring-2 focus:ring-[#FFB548] transition-colors",
                 selected === index && "bg-white/10"
               )}
               variants={itemVariants}
@@ -103,16 +103,18 @@ export default function FeaturesSection() {
               <div className="flex items-start gap-4">
                 <div
                   className={clsx(
-                    "w-3 h-3 rounded-full mt-1 border border-white transition-all shrink-0",
-                    selected === index && "bg-yellow-400 border-yellow-400"
+                    "w-3 h-3 rounded-full mt-1 border border-white/20 transition-all shrink-0",
+                    selected === index
+                      ? "bg-[#FFB548] border-[#FFB548] "
+                      : "bg-transparent"
                   )}
                   aria-hidden="true"
                 />
                 <div>
                   <h3
                     className={clsx(
-                      "uppercase mb-1 transition-colors font-bebas-neue font-normal text-4xl tracking-[2px",
-                      selected === index ? "text-yellow-400" : "text-white"
+                      "uppercase mb-1 transition-colors font-bebas-neue font-normal text-4xl tracking-[2px]",
+                      selected === index ? "text-[#FFB548]" : "text-white"
                     )}
                   >
                     {feature.title}

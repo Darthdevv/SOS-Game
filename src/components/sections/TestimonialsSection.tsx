@@ -32,7 +32,7 @@ export default function TestimonialsSection() {
     <section
       id="quotes"
       aria-labelledby="quotes-heading"
-      className="relative min-h-screen flex items-center justify-start bg-black text-white overflow-hidden"
+      className="relative min-h-screen flex items-center justify-start text-white overflow-hidden"
     >
       {/* Background image */}
       <div
@@ -40,7 +40,7 @@ export default function TestimonialsSection() {
         style={{ backgroundImage: "url('/images/bg image 6.jpg')" }}
       />
       {/* Dark overlay */}
-      <div className="absolute inset-0 z-0 bg-black/50" />
+      <div className="hidden sm:absolute inset-0 z-0 bg-black/50" />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
@@ -53,19 +53,21 @@ export default function TestimonialsSection() {
         >
           <h1
             id="quotes-heading"
-            className="text-sm text-gray-400 uppercase tracking-widest mb-2"
+            className="text-2xl text-white font-bebas-neue font-normal tracking-[2px] mb-2"
           >
             What people think?
           </h1>
-          <h2 className="text-4xl font-bold uppercase mb-6">Press Quotes</h2>
-          <p className="text-gray-300 mb-8">
-            Our goal is to create a product and service that you&apos;re satisfied
-            with and use every day. This is why we’re constantly working on our
-            services to make them better and truly listen to what our users have
-            to say.
+          <h2 className="text-[5rem] text-white font-bebas-neue font-normal leading-none tracking-[3px] mb-12.5">
+            Press Quotes
+          </h2>
+          <p className="mb-12.5 text-lg text-white font-open-sans font-normal text-[18px] tracking-normal">
+            Our goal is to create a product and service that you&apos;re
+            satisfied with and use every day. This is why we’re constantly
+            working on our services to make them better and truly listen to what
+            our users have to say.
           </p>
           <button
-            className="bg-yellow-500 text-black font-semibold px-5 py-3 rounded hover:bg-yellow-400 transition"
+            className="bg-[#FFB548] text-black px-5 py-3 rounded hover:bg-[#FFB548] transition font-open-sans font-bold"
             aria-label="Read more testimonials"
           >
             Read more testimonials
@@ -84,18 +86,30 @@ export default function TestimonialsSection() {
               className="bg-white/5 p-5 rounded-lg border border-white/10 backdrop-blur-md shadow-md"
             >
               <figcaption className="flex items-center mb-3">
-                <Image
-                  src={item.img}
-                  alt={`Photo of ${item.name}`}
-                  width={62}
-                  height={62}
-                  className="rounded-full mr-8 object-cover"
-                />
+                <div className="relative w-[62px] h-[62px] mr-8">
+                  {/* Outer golden circle */}
+                  <div className="absolute inset-0 rounded-full z-0" />
+
+                  {/* Inner black circle that cuts into the golden one to form a crescent */}
+                  <div className="absolute -right-[8px] top-1 w-[62px] h-[62px] bg-[#FFB548] rounded-full z-10" />
+
+                  {/* Avatar image clipped into a circle */}
+                  <Image
+                    src={item.img}
+                    alt={`Photo of ${item.name}`}
+                    fill
+                    quality={100}
+                    className="rounded-full object-cover z-20"
+                  />
+                </div>
+
                 <div>
-                  <h3 className="text-yellow-500 font-normal text-xl">
+                  <h3 className="text-[#FFB548] uppercase mb-1 transition-colors font-bebas-neue font-normal text-2xl tracking-[2px]">
                     {item.name}
                   </h3>
-                  <p className="text-base text-gray-400">{item.role}</p>
+                  <p className="text-white/40 text-lg transition-opacity font-open-sans font-normal">
+                    {item.role}
+                  </p>
                 </div>
                 <div className="ml-auto text-gray-600" aria-hidden="true">
                   <svg
@@ -108,10 +122,12 @@ export default function TestimonialsSection() {
                 </div>
               </figcaption>
 
-              <blockquote className="text-md text-gray-200 my-3">
+              <blockquote className="text-white text-lg transition-opacity font-open-sans font-normal mt-6">
                 “{item.quote}”
               </blockquote>
-              <p className="text-xs text-gray-500">{item.date}</p>
+              <p className="text-white/40 text-sm transition-opacity font-open-sans font-normal mt-3.5">
+                {item.date}
+              </p>
             </motion.figure>
           ))}
         </div>

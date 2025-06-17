@@ -36,22 +36,22 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <nav
-            className="flex flex-wrap justify-center gap-4 text-sm md:text-base order-2 max-sm:order-3"
+            className="flex flex-wrap justify-center max-sm:mx-auto gap-12 max-sm:gap-4 text-xs md:text-xs order-2 max-sm:order-3 font-open-sans font-bold"
             aria-label="Footer Navigation"
           >
-            <Link href="#main" className="hover:text-yellow-400">
+            <Link href="#main" className="hover:text-[#FFB548]">
               MAIN
             </Link>
-            <Link href="#about" className="hover:text-yellow-400">
+            <Link href="#about" className="hover:text-[#FFB548]">
               ABOUT
             </Link>
-            <Link href="#game-features" className="hover:text-yellow-400">
+            <Link href="#game-features" className="hover:text-[#FFB548]">
               GAME FEATURES
             </Link>
-            <Link href="#system-requirements" className="hover:text-yellow-400">
+            <Link href="#system-requirements" className="hover:text-[#FFB548]">
               SYSTEM REQUIREMENTS
             </Link>
-            <Link href="#quotes" className="hover:text-yellow-400">
+            <Link href="#quotes" className="hover:text-[#FFB548]">
               QUOTES
             </Link>
           </nav>
@@ -68,7 +68,7 @@ const Footer = () => {
               aria-label="Facebook"
             >
               <IconBrandFacebook
-                className="hover:text-yellow-400"
+                className="fill-none stroke-white hover:stroke-[#1877F2] transition-colors duration-200"
                 size={isMobile ? 20 : 24}
               />
             </a>
@@ -79,7 +79,7 @@ const Footer = () => {
               aria-label="Twitter"
             >
               <IconBrandTwitter
-                className="hover:text-yellow-400"
+                className="fill-none stroke-white hover:stroke-[#1DA1F2] transition-colors duration-200"
                 size={isMobile ? 20 : 24}
               />
             </a>
@@ -90,7 +90,7 @@ const Footer = () => {
               aria-label="YouTube"
             >
               <IconBrandYoutube
-                className="hover:text-yellow-400"
+                className="fill-none stroke-white hover:stroke-[#FF1313] transition-colors duration-200"
                 size={isMobile ? 20 : 24}
               />
             </a>
@@ -101,8 +101,8 @@ const Footer = () => {
               aria-label="Discord"
             >
               <IconBrandDiscord
-                className="hover:text-yellow-400"
                 size={isMobile ? 20 : 24}
+                className="fill-none stroke-white hover:stroke-[#7289da] transition-colors duration-200"
               />
             </a>
           </div>
@@ -112,23 +112,23 @@ const Footer = () => {
         <hr className="border-t border-gray-700 my-6" />
 
         {/* Legal Info */}
-        <div className="flex max-sm:flex-col items-center justify-between text-center text-xs md:text-sm space-y-2">
-          <p className="text-white/50">
+        <div className="flex max-sm:flex-col items-center justify-between text-center space-y-2">
+          <p className="text-white/50 text-sm font-open-sans font-normal">
             © 2018 Outpost Games, Inc. All Rights Reserved
           </p>
           <div
-            className="flex justify-center flex-wrap gap-2"
+            className="flex justify-center flex-wrap gap-2 text-xs font-open-sans font-bold"
             aria-label="Legal links"
           >
-            <Link href="#privacy" className="hover:text-yellow-400">
+            <Link href="#privacy" className="hover:text-[#FFB548]">
               PRIVACY POLICY
             </Link>
             <span className="hidden sm:inline">|</span>
-            <Link href="#terms" className="hover:text-yellow-400">
+            <Link href="#terms" className="hover:text-[#FFB548]">
               TERMS OF SERVICES
             </Link>
             <span className="hidden sm:inline">|</span>
-            <Link href="#code" className="hover:text-yellow-400">
+            <Link href="#code" className="hover:text-[#FFB548]">
               CODE OF CONDUCT
             </Link>
           </div>

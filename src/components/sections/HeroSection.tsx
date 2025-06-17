@@ -47,10 +47,7 @@ export default function Home() {
           />
         </div>
 
-        <ul
-          className="hidden lg:flex gap-12 uppercase text-sm"
-          role="menubar"
-        >
+        <ul className="hidden lg:flex gap-12 uppercase text-sm" role="menubar">
           <li role="none">
             <a
               href="#main"
@@ -161,14 +158,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <header className="relative z-10 flex-1 flex flex-col justify-center items-center text-center px-4 py-10 -mt-24">
-        <h1 className="text-4xl md:text-8xl font-bold mb-4 uppercase font-bebas-neue">
+        <h1 className="text-[5rem] max-sm:text-5xl tracking-[3px] text-white mb-4.5 uppercase font-bebas-neue font-normal">
           Survive at all costs
         </h1>
-        <p className="text-2xl max-sm:text-base mb-6 font-bebas-neue font-normal ">
+        <p className="text-2xl max-sm:text-base mb-4.5 font-bebas-neue font-normal tracking-[2px] -mt-4.5 max-sm:-mt-2">
           Experience New Social Battle Royale Game
         </p>
         <button
-          className="bg-[#FFB548] hover:bg-[#ffb648cc] text-black font-bold py-2 max-sm:text-xs px-4 rounded focus:outline focus:outline-black font-open-sans"
+          className="bg-[#FFB548] hover:bg-[#ffb648cc] text-black font-bold py-3 text-[16px] max-sm:text-xs px-4 rounded focus:outline focus:outline-black font-open-sans"
           aria-label="Buy now on Steam for 14.99 dollars"
         >
           Buy now on Steam &nbsp;|&nbsp; $14.99
